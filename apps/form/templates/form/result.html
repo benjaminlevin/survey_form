@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Input Results</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'form/css/style.css' %}">
+  </head>
+  <body>
+    <div id='thanks'>
+    <h3>Thanks for submitting this form! You have submitted this form {{ request.session.count }} times now.</h3>
+    </div>
+    <div id='wrapper'>
+      <h3>Submitted Info</h3>
+        <p class='title'>Name:</p> <p class='result'>{{ request.session.name }}</p>
+        <br>
+        <p class='title'>Dojo Location: <p class='result'>{{ request.session.location }}</p>
+        <br>
+        <p class='title'>Favorite Language: <p class='result'>{{ request.session.language }}</p>
+        <br>
+        <p class='title'>Comment: <p class='result'>{{ request.session.comment }}</p>
+        <br>
+        <a href='/'>Go Back</a>
+    </div>
+  </body>
+</html>
